@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Envelope &amp; MongoDB</title>
+
+    <meta charset='utf-8'>
+    <script src='http://html5slides.googlecode.com/svn/trunk/slides.js'></script>
+  </head>
+
+  <style>
+    .slides.template-default > article:not(.nobackground):not(.biglogo) {
+      background: white url(images/small_logo.png) 710px 625px no-repeat !important;
+    }
+
+    .slides.template-default article.biglogo {
+      background: white url(images/big_logo.png) 50% 50% no-repeat !important;
+    }
+
+    .slides.template-default article p img {
+      border-radius: 50px;
+      vertical-align: middle;
+    }
+  </style>
+
+  <body style='display: none'>
+
+    <section class='slides layout-regular template-default'>
+      <article class='biglogo'>
+      </article>
+
+      <article>
+        <h1>
+          Envelope
+          <br>
+          &amp; MongoDB
+        </h1>
+        <p>
+          Seth Vargo
+          <br>
+          Nov 28, 2012
+        </p>
+      </article>
+
+      <article>
+        <img src='images/iteration2-mail.png' width='780'>
+      </article>
+
+      <article>
+        <h3>Envelope 1.0</h3>
+        <img src='images/technologies.png' width='750' style='margin-left: 5px; margin-top: 25px;'>
+      </article>
+
+      <article>
+        <h3>Envelope 1.0</h3>
+        <img src='images/architecture.png' width='780' style='margin-top: 115px;'>
+      </article>
+
+      <article>
+        <h3>Envelope 1.0</h3>
+        <img src='images/erd.png' width='550' style='margin-left: 125px; margin-top: 25px;'>
+      </article>
+
+      <article>
+        <h3>Envelope 1.0</h3>
+        <ul class='build'>
+          <li>19 Unique Tables</li>
+          <li>23 STI Tables</li>
+          <li>44 Relations</li>
+          <li>~3 Tables/Query</li>
+        </ul>
+
+        <ul class='build'>
+          <li>31 Queries to Load Home Page</li>
+          <li>~2.43s Response Time</li>
+          <li>.78-.88 Database Load</li>
+          <li>CPU Cycles Through the Roof!</li>
+        </ul>
+      </article>
+
+      <article>
+        <q>Let's Use JSON</q>
+        <div class='author'>
+          Seth Vargo
+        </div>
+      </article>
+
+      <article>
+        <h1>Envelope 2.0</h1>
+      </article>
+
+      <article class='nobackground'>
+        <img class='centered' src='images/javascript.png' style='margin-top: 175px;'>
+      </article>
+
+      <article class='nobackground'>
+        <img class='centered' src='images/elasticsearch.png' style='margin-top: 215px;'>
+      </article>
+
+      <article class='nobackground'>
+        <img class='centered' src='images/mongo.png' style='margin-top: 175px;'>
+      </article>
+
+      <article class='nobackground'>
+        <img class='centered' src='images/sidekiq.png' style='margin-top: 175px;'>
+      </article>
+
+      <article class='smaller'>
+        <h3>message.json</h3>
+        <pre>
+{
+  "_id":"50b3f12fa3bbccf2b4000440",
+  "ancestry":null,
+  "ancestry_depth":0,
+  "created_at":"2012-11-26T22:46:07Z",
+  "flags":["notjunk", "seen"],
+  "full_html_part":null,
+  "full_text_part":null,
+  "html_part":"...",
+  "labels":[...],
+  "mailbox_id":"50b3f0d9a3bbcc6091000005",
+  "message_id":"50b3f01162c32_1161b3fe8bf482000769de@optic.wv.cc.cmu.edu.mail",
+  "participants":[...],
+  "raw":"...",
+  "timestamp":"2012-11-26T22:41:21+00:00",
+  "uid":7694,
+  "updated_at":"2012-11-27T00:40:57Z"
+}</pre>
+      </article>
+
+      <article>
+        <h3>Why Mongo?</h3>
+        <ul>
+          <li>Fast Dumps</li>
+          <li>Iterative</li>
+          <li>No Migrations</li>
+          <li>Document Orientated</li>
+          <li>Natural Fit</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Data Flow</h3>
+        <img class='centered' src='images/pre-json.png' style='margin-top: 15px;'>
+      </article>
+
+      <article>
+        <h3>Data Flow</h3>
+        <img class='centered' src='images/json.png' style='margin-top: 15px;'>
+      </article>
+
+      <article>
+        <h2>It's all JSON!</h2>
+        <ul>
+          <li>No Data Transformations</li>
+          <li>Less Marshalling</li>
+          <li>Single Protocol</li>
+          <li>Easy Conversion to Ruby Hashes</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Envelope 2.0</h3>
+        <ul class='build'>
+          <li>6 Unique Collections</li>
+          <li>0 STI Tables</li>
+          <li>4 Relations</li>
+          <li>1 Collection/Query</li>
+        </ul>
+
+        <ul class='build'>
+          <li>2 Queries to Load Home Page</li>
+          <li>~0.81s Response Time</li>
+          <li>.13-.17 Database Load</li>
+          <li>Runs on a Macbook Air!</li>
+        </ul>
+      </article>
+
+      <article class='nobackground'>
+        <p class='vertical-align'>
+          <img src='https://secure.gravatar.com/avatar/d040c79f5965e2057678c43d4f475e5e?s=75'>
+          Dominic Cerminara
+        </p>
+        <p class='vertical-align'>
+          <img src='https://secure.gravatar.com/avatar/d177328660541ccf3f717ed98f07c208?s=75'>
+          Elizabeth Li
+        </p>
+        <p class='vertical-align'>
+          <img src='https://secure.gravatar.com/avatar/87f282c6c2cdad13100dffe8c1daf77d?s=75'>
+          Seth Vargo
+        </p>
+        <p class='vertical-align'>
+          <img src='https://secure.gravatar.com/avatar/b9c97722623d36e42f6c7624bd6b4abc?s=75'>
+          Xun Wang
+        </p>
+        <h2>getenvelope.com</h2>
+      </article>
+
+      <article class='biglogo'>
+      </article>
+
+    </section>
+
+  </body>
+</html>
