@@ -9,6 +9,10 @@
   </head>
 
   <style>
+    body {
+      background: white url(images/background.png) repeat !important;
+    }
+
     .slides.template-default > article:not(.nobackground):not(.biglogo) {
       background: white url(images/small_logo.png) 710px 625px no-repeat !important;
     }
@@ -62,7 +66,7 @@
       </article>
 
       <article>
-        <h3>Envelope 1.0</h3>
+        <h3>Envelope 1.0 - Facts</h3>
         <ul class='build'>
           <li>19 Unique Tables</li>
           <li>23 STI Tables</li>
@@ -71,6 +75,7 @@
         </ul>
 
         <ul class='build'>
+          <li>300+ Seconds Loading 1000 Messages</li>
           <li>31 Queries to Load Home Page</li>
           <li>~2.43s Response Time</li>
           <li>.78-.88 Database Load</li>
@@ -79,9 +84,44 @@
       </article>
 
       <article>
+        <h3>Envelope 1.0 - Testing</h3>
+        <ul class='build'>
+          <li>268 Tests</li>
+          <li>8 Minute Unit Tests</li>
+          <li>"Create the Universe" for a single test</li>
+          <li><strike>Guard</strike></li>
+          <li>☹</li>
+        </ul>
+
+        <ul class='build'>
+          <li>"100%" Test Coverage</li>
+        </ul>
+      </article>
+
+      <article class='nobackground'>
+        <q>Don't tell Prof H, but we stopped writing tests because they took too long to run!</q>
+      </article>
+
+      <article>
+        <h3>Envelope 1.0 - Testing</h3>
+        <ul>
+          <li>188 Tests</li>
+          <li>8 Minute Unit Tests</li>
+          <li>"Create the Universe" for a single test</li>
+          <li><strike>Guard</strike></li>
+          <li>☹</li>
+        </ul>
+
+        <ul>
+          <li><strike>"100%" Test Coverage</strike></li>
+          <li>"73%" Test Coverage</li>
+        </ul>
+      </article>
+
+      <article>
         <q>Let's Use JSON</q>
         <div class='author'>
-          Seth Vargo
+          Seth Vargo (→)
         </div>
       </article>
 
@@ -105,6 +145,16 @@
         <img class='centered' src='images/sidekiq.png' style='margin-top: 175px;'>
       </article>
 
+      <article>
+        <h3>Data Flow</h3>
+        <img class='centered' src='images/pre-json.png' style='margin-top: 15px;'>
+      </article>
+
+      <article>
+        <h3>Data Flow</h3>
+        <img class='centered' src='images/json.png' style='margin-top: 15px;'>
+      </article>
+
       <article class='smaller'>
         <h3>message.json</h3>
         <pre>
@@ -126,12 +176,28 @@
   "uid":7694,
   "updated_at":"2012-11-27T00:40:57Z"
 }</pre>
+        <div class='build'>
+        <h2>First-Class Citizen</h2>
+        </div>
+      </article>
+
+      <article>
+        <h1>Why?</h1>
+        <ul>
+          <li>No Data Transformations</li>
+          <li>Less Marshalling</li>
+          <li>Single Protocol</li>
+          <li>Easy Conversion to Ruby Hashes</li>
+          <li><strong>It's all JSON!</strong></li>
+        </ul>
       </article>
 
       <article>
         <h3>Why Mongo?</h3>
-        <ul>
+        <ul class='build'>
+          <li>JSON (BSON)</li>
           <li>Fast Dumps</li>
+          <li>No Serialization</li>
           <li>Iterative</li>
           <li>No Migrations</li>
           <li>Document Orientated</li>
@@ -140,27 +206,7 @@
       </article>
 
       <article>
-        <h3>Data Flow</h3>
-        <img class='centered' src='images/pre-json.png' style='margin-top: 15px;'>
-      </article>
-
-      <article>
-        <h3>Data Flow</h3>
-        <img class='centered' src='images/json.png' style='margin-top: 15px;'>
-      </article>
-
-      <article>
-        <h2>It's all JSON!</h2>
-        <ul>
-          <li>No Data Transformations</li>
-          <li>Less Marshalling</li>
-          <li>Single Protocol</li>
-          <li>Easy Conversion to Ruby Hashes</li>
-        </ul>
-      </article>
-
-      <article>
-        <h3>Envelope 2.0</h3>
+        <h3>Envelope 2.0 - Facts</h3>
         <ul class='build'>
           <li>6 Unique Collections</li>
           <li>0 STI Tables</li>
@@ -169,29 +215,45 @@
         </ul>
 
         <ul class='build'>
+          <li>~8 Seconds Loading 1000 Messages</li>
+          <li>~40 Seconds Loading 1000 Messages w/Attachments</li>
           <li>2 Queries to Load Home Page</li>
           <li>~0.81s Response Time</li>
           <li>.13-.17 Database Load</li>
-          <li>Runs on a Macbook Air!</li>
+          <li><strong>Runs on a Macbook Air!</strong></li>
         </ul>
+      </article>
+
+      <article>
+        <h3>Envelope 2.0 - Testing</h3>
+        <ul class='build'>
+          <li>213 Tests</li>
+          <li>11 <strong>Second</strong> Unit Tests (How?)</li>
+          <li>Isolation and Idempotentency</li>
+          <li>Guard</li>
+        </ul>
+      </article>
+
+      <article>
+        <img src='images/tests.png' style='margin-top: 260px;'>
       </article>
 
       <article class='nobackground'>
         <p class='vertical-align'>
           <img src='https://secure.gravatar.com/avatar/d040c79f5965e2057678c43d4f475e5e?s=75'>
-          Dominic Cerminara
+          Dominic Cerminara (@domcerminara)
         </p>
         <p class='vertical-align'>
           <img src='https://secure.gravatar.com/avatar/d177328660541ccf3f717ed98f07c208?s=75'>
-          Elizabeth Li
+          Elizabeth Li (@elizabethtli)
         </p>
         <p class='vertical-align'>
           <img src='https://secure.gravatar.com/avatar/87f282c6c2cdad13100dffe8c1daf77d?s=75'>
-          Seth Vargo
+          Seth Vargo (@sethvargo)
         </p>
         <p class='vertical-align'>
           <img src='https://secure.gravatar.com/avatar/b9c97722623d36e42f6c7624bd6b4abc?s=75'>
-          Xun Wang
+          Xun Wang (@xunniw)
         </p>
         <h2>getenvelope.com</h2>
       </article>
